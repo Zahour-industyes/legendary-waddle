@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://kit.fontawesome.com/9395f8b44d.js" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@font-face {
+    font-family: JustCoolFont;
+    src: url(/fonts/terminal-grotesque.grotesque-regular.ttf);
+}
+
+/* ------------------------------------ */
+
+.post__wrapper {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 40%;
+  border-radius: 5px;
+
+  margin-bottom: 20px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ---------------------------------------------- */
+
+.post__bottom-wrapper {
+  padding: 2px 16px;
+
+  font-family: JustCoolFont;
+
+  border: 1px solid #D3D3D3;
+
+  display: grid; 
+  grid-template-columns: 0.3fr 0.5fr 2.5fr 0.1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ".post__profile-picture .post__profile-name .post__hastag .post__coments-icon"; 
+}
+
+.post__likes-count {
+    text-align: center;
+}
+
+.post__profile-picture {
+    border-radius: 100%;
+
+    width: 50px;
+    height: 50px;
+}
+
+.post__profile-name {
+    color: #000000;
+    text-decoration: none;
+}
+
+.post__coments-icon{
+    padding-top: 15px;
+    font-size: 30px;
+}
+
+.post__coments-icon-link {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* ------------------------------------ */
+
+.post__details-icon {
+  padding-left: 50%;
+}
+
+/* ------------------------------------ */
+
+.collapsible {
+  background-color: #ffffff;
+  color: #000000;
+
+  cursor: pointer;
+
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+
+
+}
+
+.active, .collapsible:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: rotate(180deg);
+  padding-right: 45px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="post__wrapper">
+  <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" style="width:100%" class="content-image">
+
+  <div class="post__bottom-wrapper">
+    <a href=""><img src="/images/users/profile-IV-dan-bull__profile-picture.jpg" class="post__profile-picture"></a>
+    <a class="post__profile-name" href=""><h4 class="post__profile-name"><b>@itsDanBull</b></h4></a> 
+    <p class="post__likes-count">likes</p>
+    <a href="" class="post__coments-icon-link"><i class="fa-regular fa-message post__coments-icon"></i></a>
+  </div>
+
+  <button type="button" class="collapsible"><i class="fa-solid fa-angle-down post__details-icon"></i></button>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+</div>
+
+<!---->
+
+<div class="post__wrapper">
+  <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" style="width:100%" class="content-image">
+
+  <div class="post__bottom-wrapper">
+    <a href=""><img src="/images/users/profile-IV-dan-bull__profile-picture.jpg" class="post__profile-picture"></a>
+    <a class="post__profile-name" href=""><h4 class="post__profile-name"><b>@itsDanBull</b></h4></a> 
+    <p class="post__likes-count">likes</p>
+    <a href="" class="post__coments-icon-link"><i class="fa-regular fa-message post__coments-icon"></i></a>
+  </div>
+
+  <button type="button" class="collapsible"><i class="fa-solid fa-angle-down post__details-icon"></i></button>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+</div>
+
+<!---->
+<!---->
+<!---->
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+</body>
+</html> 

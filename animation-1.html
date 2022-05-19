@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+        div {
+          width: 100px;
+          height: 150px;
+          background: red;
+          transition: width 2s, height 2s, transform 2s, marin-left 2s;
+        }
+        
+        div:hover {
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+            margin-left: 50px;
+        }
+
+        a {
+    background-color: #FF0;
+}
+
+a:hover {
+    background-color: #AD310B;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+
+body {
+    margin: 0;
+}
+        </style>
+
+</head>
+<body>
+    <h1>The transition Property</h1>
+
+    <p>Hover over the div element below, to see the transition effect:</p>
+
+    <div></div>
+
+    <a>Navigation Link</a>
+
+    <img style="width: 1900px;"src="images/svg-ocean top.jpg" alt="" class="svg-image">
+</body>
+</html>
