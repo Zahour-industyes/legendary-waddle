@@ -16,6 +16,9 @@
   width: 40%;
   border-radius: 5px;
 
+  width: 700px;
+  height: 700px;
+
   margin-bottom: 20px;
 
   display: block;
@@ -108,6 +111,33 @@
   background-color: #ffffff;
 }
 
+/* ------------------------------------*/
+
+.like-cup{
+            width: 40px;
+            height: 40px;
+        }
+
+        input:checked + label svg {
+            fill: #CCAE88;
+            stroke: #CCAE88;
+            animation: heartButton 1s;
+        }
+
+        @keyframes heartButton {
+            0% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -118,8 +148,14 @@
 
   <div class="post__bottom-wrapper">
     <a href=""><img src="/images/users/profile-IV-dan-bull__profile-picture.jpg" class="post__profile-picture"></a>
-    <a class="post__profile-name" href=""><h4 class="post__profile-name"><b>@itsDanBull</b></h4></a> 
-    <p class="post__likes-count">likes</p>
+    <a class="post__profile-name" href=""><h4 class="post__profile-name"><b>@itsDanBull</b></h4></a>
+    <div class="post__likes-count">
+      <input type="checkbox" checked="checked" id="favorite" name="favorite-checkbox" value="favorite-button" hidden>
+      <label for="favorite" class="container">
+          <svg class="like-cup" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 5H4v7a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4v-1m0-6v6m0-6h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2M4 19h14"/></svg>
+      </label>
+      <p class="">likes</p>
+    </div>
     <a href="" class="post__coments-icon-link"><i class="fa-regular fa-message post__coments-icon"></i></a>
   </div>
 
@@ -132,22 +168,6 @@
 
 <!---->
 
-<div class="post__wrapper">
-  <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" style="width:100%" class="content-image">
-
-  <div class="post__bottom-wrapper">
-    <a href=""><img src="/images/users/profile-IV-dan-bull__profile-picture.jpg" class="post__profile-picture"></a>
-    <a class="post__profile-name" href=""><h4 class="post__profile-name"><b>@itsDanBull</b></h4></a> 
-    <p class="post__likes-count">likes</p>
-    <a href="" class="post__coments-icon-link"><i class="fa-regular fa-message post__coments-icon"></i></a>
-  </div>
-
-  <button type="button" class="collapsible"><i class="fa-solid fa-angle-down post__details-icon"></i></button>
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-
-</div>
 
 <!---->
 <!---->

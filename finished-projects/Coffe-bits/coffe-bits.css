@@ -1,0 +1,232 @@
+@font-face {
+    font-family: JustCoolFont;
+    src: url(/fonts/terminal-grotesque.grotesque-regular.ttf);
+}
+
+body {
+    margin: 0;
+}
+
+/* ------------------------------------ */
+
+.post__wrapper {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 40%;
+  border-radius: 5px;
+
+  margin-bottom: 20px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ---------------------------------------------- */
+
+.post__bottom-wrapper {
+  padding: 2px 16px;
+
+  font-family: JustCoolFont;
+
+  border: 1px solid #D3D3D3;
+
+  background-color: #ffffff;
+
+  display: grid; 
+  grid-template-columns: 0.3fr 0.5fr 2.5fr 0.1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ".post__profile-picture .post__profile-name .post__hastag .post__coments-icon"; 
+}
+
+.post__likes-count {
+    text-align: center;
+}
+
+.post__profile-picture {
+    border-radius: 100%;
+
+    width: 50px;
+    height: 50px;
+}
+
+.post__profile-name {
+    color: #000000;
+    text-decoration: none;
+}
+
+.post__coments-icon{
+    padding-top: 15px;
+    font-size: 30px;
+}
+
+.post__coments-icon-link {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* ------------------------------------ */
+
+.post__details-icon {
+  padding-left: 50%;
+}
+
+/* ------------------------------------ */
+
+.collapsible {
+  background-color: #ffffff;
+  color: #000000;
+
+  cursor: pointer;
+
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+
+
+}
+
+.active, .collapsible:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: rotate(180deg);
+  padding-right: 45px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* ---------------------------------------*/
+
+.svg-wave-at-the-top{
+    position: absolute;
+    top: 80px;
+
+    z-index: -1;
+}
+
+.svg-wave-at-the-top__filler{
+    background-color: #B18F6A;
+
+    width: 1481px;
+    height: 100px;
+
+    position: absolute;
+    top: 230px;
+    z-index: -1;
+}
+
+/* ---------------------------------------*/
+
+.table-of-accounts-wrapper {
+    margin-left: 50vh;
+}
+
+/* -------------------------------*/
+
+.pricing-plan {
+    width: 150px;
+    
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    
+    overflow: hidden;
+
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555555;
+    
+    margin: 15px;
+}
+
+.pricing-plan__header {
+    padding: 25px;
+    background:  #C08A80;
+    color: #ffffff;
+}
+
+.pricing-plan__title,
+.pricing-plan__summary {
+    margin: 0;
+    text-align: center;
+}
+
+.pricing-plan__title {
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.pricing-plan__summary {
+    font-size: 0.7em;
+    font-weight: 300;
+}
+
+.pricing-plan__description {
+    padding: 25px;
+    border: solid 1px #C08A80;
+    border-radius: 0 0 25px 25px;
+
+    background-color: #ffffff;
+}
+
+.pricing-plan__list {
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-plan__feature {
+    list-style: none;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.go-to-profile-button {
+    color: #ffffff;
+    background-color: #C08A80;
+    border: solid 2px #C08A80;
+
+    font-size: smaller;
+    font-family: sans-serif;
+
+    border-radius: 5px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.pricing-plan__profile-picture-the-click {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+
+    margin-bottom: 5px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------------------------------------------ */
+
+.brown-background {
+    background-image: url(/images/iced-coffee-solid-color-square-background.png);
+}
