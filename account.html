@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* ======================== Pre setup of page =========================== */
+        body {
+            margin: 0;
+
+            width: 1495px;
+
+            font-family: sans-serif;
+        }
+        /* ====================================================================== */
+
+        /* =============================== SVG Wave ============================= */
+        .svg-wave-at-the-top{
+            position: absolute;
+            top: 80px;
+
+            z-index: -1;
+        }
+
+        .svg-wave-at-the-top__filler{
+            background-color: #B18F6A;
+
+            width: 1495px;
+            height: 100px;
+
+            position: absolute;
+            top: 150px;
+            z-index: -1;
+        }
+        /* ======================= Profile info at the top ======================== */
+        .profile__wrapper{
+            background-color: #B18F6A;
+        }
+
+        .profile__profile-image{
+            border-radius: 50%;
+
+            position: relative;
+            bottom: 140px;
+            left: 25px;
+        }
+
+        .profile__text-part-wrapper {
+            position: relative;
+            bottom: 330px;
+            left: 25%;
+        }
+
+        .profile__profile-name {
+            position: relative;
+            bottom: 30px;
+            right: 3px;
+        }
+
+        .profile__separation-line-text-part {
+            width: 15%;
+
+            position: relative;
+            right: 635px;
+
+            color: #ffffff;
+            background-color: #ffffff;
+        }
+
+        .profile__profile-description {
+            font-weight: lighter;
+        }
+
+        /* ========================== Followers ============================= */
+
+        #follow-button {
+            color: #f5edda;
+            background-color: #363636;
+            border: solid 2px #363636;
+
+            font-size: 25px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            border-radius: 5px;
+
+            position: relative;
+            left: 25%;
+            bottom: 300px;
+
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        .follow__count-wrapper {
+            color: #000000;
+        }
+
+        #amount-of-followers-thousands {
+            position: relative;
+            left: 35%;
+            bottom: 345px;
+
+            font-weight: 600;
+        }
+
+        #amount-of-followers-hundreds {
+            position: relative;
+            left: 36.5%;
+            bottom: 379.5px;
+
+            font-weight: 600;
+        }
+
+        .followers {
+            position: relative;
+            left: 38.3%;
+            bottom: 413.5px;
+            padding-left: 3px;
+        }
+
+        /* ============================== Posts ================================== */
+        .posts__wrapper{
+            display: grid; 
+            grid-template-columns: 1fr 1fr 1fr; 
+            grid-template-rows: 1fr 1fr 1fr; 
+            gap: 10px 10px; 
+            grid-template-areas: 
+            ". . ."
+            ". . ."
+            ". . ."; 
+        }
+        
+        .posts__post-image{
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ============================== Pop up function =========================== */
+
+        .popup .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            
+            width: 100vw;
+            height: 100vh;
+
+            background-color:rgba(0, 0, 0, 0.7);
+
+            z-index: 1;
+
+            display: none;
+
+            cursor: pointer;
+        }
+
+        .popup .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%) scale(0);
+
+            background: #ffffff;
+
+            width: 50%;
+            height: 100%;
+
+            z-index: 2;
+
+            text-align: center;
+
+            padding: 20px;
+
+            box-sizing: border-box;
+
+            cursor: pointer;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            left: 140%;
+            top: 20px;
+
+            width: 30px;
+            height: 30px;
+
+            background-color: #222222;
+            color: #ffffff;
+
+            font-size: 35px;
+            font-weight: 100;
+            line-height: 30px;
+            text-align: center;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+        }
+
+        .popup.active .overlay {
+            display: block;
+        }
+
+        .popup.active .content {
+            transition: all 300ms ease-in-out;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- SVG Wave at the top -->
+        <svg id="visual" viewBox="0 0 1495 150" width="1495" height="150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <rect x="0" y="0" width="1495" height="150" fill="#ffffff"></rect><path d="M0 96L13.8 101.2C27.7 106.3 55.3 116.7 83 121C110.7 125.3 138.3 123.7 166 121.5C193.7 119.3 221.3 116.7 249 116.3C276.7 116 304.3 118 332 115.3C359.7 112.7 387.3 105.3 415 102.2C442.7 99 470.3 100 498 104.7C525.7 109.3 553.3 117.7 581 119.3C608.7 121 636.3 116 664.2 115.2C692 114.3 720 117.7 747.8 120.3C775.7 123 803.3 125 831 123.3C858.7 121.7 886.3 116.3 914 115.5C941.7 114.7 969.3 118.3 997 118C1024.7 117.7 1052.3 113.3 1080 109C1107.7 104.7 1135.3 100.3 1163 100.2C1190.7 100 1218.3 104 1246 107C1273.7 110 1301.3 112 1329 113.2C1356.7 114.3 1384.3 114.7 1412 113C1439.7 111.3 1467.3 107.7 1481.2 105.8L1495 104L1495 151L1481.2 151C1467.3 151 1439.7 151 1412 151C1384.3 151 1356.7 151 1329 151C1301.3 151 1273.7 151 1246 151C1218.3 151 1190.7 151 1163 151C1135.3 151 1107.7 151 1080 151C1052.3 151 1024.7 151 997 151C969.3 151 941.7 151 914 151C886.3 151 858.7 151 831 151C803.3 151 775.7 151 747.8 151C720 151 692 151 664.2 151C636.3 151 608.7 151 581 151C553.3 151 525.7 151 498 151C470.3 151 442.7 151 415 151C387.3 151 359.7 151 332 151C304.3 151 276.7 151 249 151C221.3 151 193.7 151 166 151C138.3 151 110.7 151 83 151C55.3 151 27.7 151 13.8 151L0 151Z" fill="#B18F6A" stroke-linecap="round" stroke-linejoin="miter"></path>
+        </svg>
+        <div class="svg-wave-at-the-top__filler"></div>
+    <!---->
+
+    <!-- Profile at the top of the page info, photo, short bio etc... -->
+    <section class="profile__wrapper">
+        <img src="/images/users/profile-I-the-click__profile-picture.jpg" alt="" class="profile__profile-image">
+        <div class="profile__text-part-wrapper">
+            <h2 class="profile__profile-name">Clickywicky</h2>
+            <hr class="profile__separation-line-text-part">
+            <p class="profile__profile-description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, quia.<br>
+            Quaerat consectetur saepe explicabo voluptatem eius sapiente enim voluptas, aliquid rerum doloribus dolorem.<br>
+            Eum velit ad esse, non ullam doloribus iste maiores tenetur nisi!<br>
+            Qui blanditiis mollitia consequuntur rem, nihil, ratione rerum esse inventore sunt hic atque vel et deserunt.
+            </p>
+        </div>
+    </section>
+    <!---->
+
+    <!--Followers count and Follow button-->
+    <section class="follow__wrapper">
+        <div class="follow__button-wrapper">
+            <button id="follow-button" onclick="document.getElementById('follow-button').innerHTML = following">Follow</button>
+        </div>
+        <div class="follow__count-wrapper">
+            <p id="amount-of-followers-thousands"></p>
+            <p id="amount-of-followers-hundreds"></p>
+            <p class="followers">Followers</p>
+        </div>
+    </section>
+
+    <!-- Posts videos, photos and maybe some audio (will need some js for windows of posts)-->
+    <section class="posts__wrapper">
+        <div class="popup" id="popup-1" hidden>
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()">&times;</div>
+                    <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+            </div>
+       </div>
+
+       <a onclick="togglePopup()" href="/images/posts/profile-IV-dan-bull__photo-1.jpg">
+            <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+       </a>
+        <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+        <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+        <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+        <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+        <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+        <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+        <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+        <img src="/images/posts/profile-IV-dan-bull__photo-1.jpg" alt="" class="posts__post-image">
+    </section>
+
+    <!---->
+    <!---->
+    <!---->
+
+    <!--JavaScript part-->
+
+    <script>
+        var RandomAmountOfFollowersThousands = Math.floor((Math.random()* 100) + 1);
+        var RandomAmountOfFollowersHundreds = Math.floor((Math.random() * 10) + 1);
+
+        let following = "Following";
+
+        document.getElementById("amount-of-followers-thousands").innerHTML = RandomAmountOfFollowersThousands + ".";
+        document.getElementById("amount-of-followers-hundreds").innerHTML = RandomAmountOfFollowersHundreds + "K";
+
+        // --------------------------------------------
+
+        function togglePopup() {
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
