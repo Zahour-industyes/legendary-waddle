@@ -3,6 +3,16 @@
     src: url(/fonts/terminal-grotesque.grotesque-regular.ttf);
 }
 
+@keyframes rotateanimation{
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
 body {
     margin: 0;
 }
@@ -94,12 +104,11 @@ body {
 
 }
 
-.active, .collapsible:hover {
-  background-color: #ffffff;
-  color: #000000;
-  transform: rotate(180deg);
-  padding-right: 45px;
+.collapsible:checked {
+    animation-duration: 2s;
+    animation-name: rotateanimation;
 }
+
 
 .content {
   padding: 0 18px;
@@ -120,7 +129,7 @@ body {
 .svg-wave-at-the-top__filler{
     background-color: #B18F6A;
 
-    width: 1481px;
+    width: 1864px;
     height: 100px;
 
     position: absolute;

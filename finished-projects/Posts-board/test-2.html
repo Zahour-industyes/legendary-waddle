@@ -138,6 +138,21 @@
             }
         }
 
+.angle-down {
+  input:checked + label svg {
+    animation: rotateanimation 1s;
+  }
+
+  @keyframes rotateanimation {
+    50% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 </style>
 </head>
 <body>
@@ -158,8 +173,9 @@
     </div>
     <a href="" class="post__coments-icon-link"><i class="fa-regular fa-message post__coments-icon"></i></a>
   </div>
-
-  <button type="button" class="collapsible"><i class="fa-solid fa-angle-down post__details-icon"></i></button>
+  <label class="angle-down">
+    <button type="button" class="collapsible"><i class="fa-solid fa-angle-down post__details-icon"></i></button>
+  </label>
     <div class="content">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
